@@ -34,41 +34,48 @@ void pause() {
 // MAIN
 
 void main() {
+	for (int i = 0; i < 30; i++) {
 
-	//define variables:
-	int userNumber;
-	int digit1;
-	int digit2;
-	int digit3;
 
-	//ask for variable
 
-	cout << "Give me a three digit number!" << endl;
-	
+
+		//define variables: 
+		int userNumber;
+		int digit1;
+		int digit2;
+		int digit3;
+
+		//ask for variable
+
+		cout << "Would you kindly provide me with a three digit number?" << endl; /*
+		Don't have the computer yell please. I have taken out the exclamation mark and other rude questions because I feel attacked when the computer yells
+	*/
 	// take in variable
+		cin >> userNumber;
+		// seperate number to 3 digits;
 
-	cin >> userNumber;
+		digit1 = userNumber / 100; //int division // This digit2 integer modification is in long form. It's condensible 
+		digit2 = (userNumber / 10) % 10;
+		digit3 = userNumber % 10;
 
 
-	// seperate number to 3 digits;
 
-	digit1 = userNumber / 100; //int division
-	digit2 = userNumber % 100;
-	digit2 = digit2 / 10;
-	digit3 = userNumber % 10;
 
-	// display
-	cout << "The first digit is " << digit1 << " and the second digit is " << digit2 << " and the last digit is " << digit3 << endl;
-	//calculate ascending descending or neither:
-	if (digit1 > digit2 && digit2 > digit1) {
-		cout << "Your number is descending!" << endl;
+		//calculate ascending descending or neither:
+		if (digit1 > digit2 && digit2 > digit3) {
+			cout << "Your number " << digit1 << digit2 << digit3 << " is descending" << endl;
+		}
+		else if (digit1 < digit2 && digit2 < digit3) {
+			cout << "Your number " << digit1 << digit2 << digit3 << " is ascending" << endl;
+		}
+		else {
+			cout << "Your number " << digit1 << digit2 << digit3 << " is neither ascending nor descending" << endl;
+		}
+
+
+
 	}
-	else if (digit1 < digit2 && digit2 < digit3) {
-		cout << "Your number is ascending!" << endl;
+	
+	
+		pause(); // pauses to see the displayed text
 	}
-	else {
-		cout << "Your number is neither ascending or descending." << endl;
-	}
-
-	pause(); // pauses to see the displayed text
-}
